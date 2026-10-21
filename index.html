@@ -69,5 +69,156 @@ $('musicBtn').addEventListener('click',async()=>{const a=$('audio');if(!a.src){t
 $('resetBtn').addEventListener('click',()=>{data={...defaultData};fillInputs();render();toast('처음 상태로 돌아왔어.')});
 (function init(){const hash=location.hash.match(/(?:^#|&)c=([^&]+)/);const fromLink=hash?decode(hash[1]):null;if(fromLink&&typeof fromLink==='object'&&typeof fromLink.message==='string'){data={...defaultData,...fromLink};$('editor').classList.add('hidden');$('eyebrow').textContent='너만을 위해 도착한 편지';$('viewActions').classList.remove('hidden');}else{try{const saved=JSON.parse(localStorage.getItem('aube-message-draft'));if(saved)data={...defaultData,...saved}}catch{}fillInputs()}render()})();
 </script>
+
+<style>
+  #naz-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: #fff5f7;
+    color: #795565;
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  #naz-gate .gate-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  #naz-gate .gate-cat {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+
+  #naz-gate h2 {
+    font-size: 23px;
+    margin: 0 0 12px;
+  }
+
+  #naz-gate p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 26px;
+  }
+
+  #naz-progress-track {
+    height: 8px;
+    background: #f0dce3;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+
+  #naz-progress {
+    height: 100%;
+    width: 0%;
+    background: #d98da6;
+    transition: width 0.03s linear;
+  }
+
+  #naz-hold {
+    width: 100%;
+    padding: 18px;
+    border: 0;
+    border-radius: 18px;
+    background: #d98da6;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    touch-action: none;
+    user-select: none;
+  }
+
+  #naz-hold:active {
+    background: #c97895;
+  }
+
+  #naz-percent {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+</style>
+
+<div id="naz-gate">
+  <div class="gate-card">
+    <div class="gate-cat">🐱</div>
+    <h2>당신에게 전할 편지가 있어요 ♡</h2>
+    <p>
+      조금만 더 가까이 와 줄래요?<br>
+      버튼을 끝까지 꾹 눌러 주세요.
+    </p>
+
+    <div id="naz-progress-track">
+      <div id="naz-progress"></div>
+    </div>
+
+    <button id="naz-hold" type="button">
+      ♡ 편지 열기
+    </button>
+
+    <div id="naz-percent">0% · 꾹 눌러 주세요</div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const gate = document.getElementById('naz-gate');
+  const button = document.getElementById('naz-hold');
+  const bar = document.getElementById('naz-progress');
+  const label = document.getElementById('naz-percent');
+
+  let progress = 0;
+  let timer = null;
+  let opened = false;
+
+  function stopHolding() {
+    if (timer) clearInterval(timer);
+    timer = null;
+
+    if (!opened) {
+      progress = 0;
+      bar.style.width = '0%';
+      label.textContent = '0% · 다시 꾹 눌러 주세요';
+    }
+  }
+
+  button.addEventListener('pointerdown', (event) => {
+    if (opened || timer) return;
+    event.preventDefault();
+    button.setPointerCapture(event.pointerId);
+    label.textContent = '편지를 열고 있어요…';
+
+    timer = setInterval(() => {
+      progress += 1;
+      bar.style.width = progress + '%';
+      label.textContent = progress + '%';
+
+      if (progress >= 100) {
+        clearInterval(timer);
+        timer = null;
+        opened = true;
+        gate.style.transition = 'opacity 0.7s ease';
+        gate.style.opacity = '0';
+
+        setTimeout(() => gate.remove(), 700);
+      }
+    }, 30);
+  });
+
+  button.addEventListener('pointerup', () => {
+    if (!opened) stopHolding();
+  });
+
+  button.addEventListener('pointercancel', () => {
+    if (!opened) stopHolding();
+  });
+})();
+</script>
 </body>
 </html>
