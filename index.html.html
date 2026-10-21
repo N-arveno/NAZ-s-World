@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#fff5f7" />
+<title>너에게 할 말이 있어… ♡</title>
+<style>
+@import url("https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@latest/neodgm/style.css");
+:root{--bg:#fff5f7;--card:#fffdfd;--ink:#704b57;--muted:#a78691;--accent:#e9a8bb;--accent2:#f8dbe4;--line:#f1dce3;--shadow:0 18px 55px #a45f7815}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 10%,#ffe5ed 0,transparent 28%),radial-gradient(circle at 90% 80%,#f9e5ee 0,transparent 26%),var(--bg);color:var(--ink);font-family:"NeoDunggeunmo Pro","NeoDunggeunmo",monospace;font-weight:700;letter-spacing:.01em;display:flex;justify-content:center;padding:24px 14px 40px}
+button,input,textarea,select{font:inherit;font-family:"NeoDunggeunmo Pro","NeoDunggeunmo",monospace;font-weight:700}button{cursor:pointer;border:0}.app{width:min(100%,560px)}.topline{text-align:center;font-size:12px;letter-spacing:.16em;color:var(--muted);margin:8px 0 16px}.panel{background:#ffffffd9;border:1px solid #fff;box-shadow:var(--shadow);border-radius:28px;padding:clamp(20px,5vw,34px);backdrop-filter:blur(10px)}.hero{text-align:center}.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--muted)}h1{font-size:clamp(27px,7vw,39px);line-height:1.35;margin:10px 0 8px;letter-spacing:-.05em}.subtitle{color:var(--muted);font-size:14px;line-height:1.8;margin:0 auto;max-width:340px}.bunny-wrap{height:170px;display:grid;place-items:center;position:relative;margin:6px 0 2px}.bunny{font-size:105px;filter:drop-shadow(0 8px 3px #c78ba51b);animation:bob 2.7s ease-in-out infinite;user-select:none}.heart{position:absolute;font-size:22px;animation:float 2.4s ease-in-out infinite}.heart.one{left:24%;top:32%;animation-delay:.3s}.heart.two{right:24%;top:24%;animation-delay:1s}.heart.three{right:31%;bottom:13%;font-size:16px;animation-delay:.7s}@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}@keyframes float{0%,100%{transform:translateY(5px) scale(.9);opacity:.55}50%{transform:translateY(-12px) scale(1.12);opacity:1}}.message-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;text-align:center;margin:22px 0 16px;position:relative;overflow:hidden}.message-card:before{content:'♡';position:absolute;font-size:72px;color:var(--accent2);right:10px;bottom:-26px;transform:rotate(-14deg)}.to{font-size:12px;color:var(--muted);margin-bottom:10px}.message{font-size:18px;line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere;position:relative;z-index:1}.from{font-size:13px;color:var(--muted);text-align:right;margin-top:14px;position:relative;z-index:1}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.primary,.secondary{border-radius:999px;padding:13px 19px;transition:transform .2s,filter .2s}.primary{background:var(--accent);color:white;box-shadow:0 8px 20px #d88ba333}.secondary{background:white;color:var(--ink);border:1px solid var(--line)}button:hover{filter:brightness(.98);transform:translateY(-1px)}.foot{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.04em;margin:20px 0 0}.editor{margin-top:18px}.editor summary{cursor:pointer;text-align:center;color:var(--muted);font-size:13px;padding:12px}.fields{display:grid;gap:13px;padding-top:14px}label{display:grid;gap:7px;font-size:12px;color:var(--muted)}input[type=text],textarea,select{width:100%;border:1px solid var(--line);background:#fffdfd;color:var(--ink);padding:12px 13px;border-radius:13px;outline:none}textarea{min-height:105px;resize:vertical;line-height:1.7}input:focus,textarea:focus,select:focus{border-color:var(--accent)}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.swatches{display:flex;gap:10px;flex-wrap:wrap}.swatch{width:32px;height:32px;border-radius:50%;border:3px solid white;outline:1px solid var(--line);padding:0}.swatch[aria-pressed=true]{outline:2px solid var(--ink)}.small{font-size:11px;color:var(--muted);line-height:1.7}.music-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.music-row input{max-width:100%;font-size:12px}.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#704b57;color:#fff;padding:11px 17px;border-radius:99px;font-size:13px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw;text-align:center}.toast.show{opacity:1}.hidden{display:none!important}.open-letter{animation:reveal .7s both}@keyframes reveal{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:420px){body{padding:12px 10px 28px}.panel{border-radius:23px;padding:20px 16px}.bunny-wrap{height:145px}.bunny{font-size:92px}.message{font-size:17px}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="topline">A LITTLE MESSAGE, JUST FOR YOU ♡</div>
+  <section class="panel hero" id="mainPanel">
+    <div class="eyebrow" id="eyebrow">작은 용기를 모아서</div>
+    <h1 id="heading">너에게 할 말이 있어… ♡</h1>
+    <p class="subtitle" id="subtitle">조금 부끄럽지만, 오늘은 꼭 전하고 싶었어.</p>
+    <div class="bunny-wrap" aria-label="하트를 안은 토끼 캐릭터"><span class="heart one">♡</span><span class="heart two">✦</span><span class="heart three">♡</span><div class="bunny" id="bunny">🐰</div></div>
+    <div class="message-card" id="messageCard">
+      <div class="to" id="toLine">TO. 나의 소중한 사람</div>
+      <div class="message" id="message">너와 함께하는 평범한 날들이
+나에게는 가장 특별한 기적이야.</div>
+      <div class="from" id="fromLine">언제나 네 편인 사람이 ♡</div>
+    </div>
+    <div class="actions" id="viewActions"><button class="primary" id="revealBtn">편지 다시 읽기 ♡</button><button class="secondary" id="musicBtn">♫ 음악 켜기</button></div>
+    <div class="actions" style="margin-top:10px"><button class="secondary" id="shareBtn">링크 공유하기 ↗</button><button class="secondary" id="saveBtn">이 편지 저장하기 ♡</button></div>
+    <div class="foot">made with love · for you</div>
+  </section>
+  <details class="panel editor" id="editor">
+    <summary>✎ 내 마음으로 편지 꾸미기</summary>
+    <div class="fields">
+      <label>페이지 제목<input id="titleInput" type="text" maxlength="60" value="너에게 할 말이 있어… ♡" /></label>
+      <div class="two"><label>받는 사람<input id="toInput" type="text" maxlength="40" value="나의 소중한 사람" /></label><label>보내는 사람<input id="fromInput" type="text" maxlength="40" value="언제나 네 편인 사람이 ♡" /></label></div>
+      <label>전하고 싶은 마음<textarea id="messageInput" maxlength="1200">너와 함께하는 평범한 날들이 나에게는 가장 특별한 기적이야.</textarea></label>
+      <div class="two"><label>캐릭터<select id="characterInput"><option value="🐰">토끼 🐰</option><option value="🐻‍❄️">북극곰 🐻‍❄️</option><option value="🦊">여우 🦊</option><option value="🦝">레서판다 🦝</option><option value="🐱">고양이 🐱</option><option value="🐸">개구리 🐸</option><option value="🐣">병아리 🐣</option></select></label><label>작은 문구<input id="subtitleInput" type="text" maxlength="90" value="조금 부끄럽지만, 오늘은 꼭 전하고 싶었어." /></label></div>
+      <label>배경색</label><div class="swatches" id="swatches"><button class="swatch" data-color="#fff5f7" style="background:#fff5f7" aria-label="분홍" aria-pressed="true"></button><button class="swatch" data-color="#f3f5ff" style="background:#f3f5ff" aria-label="라벤더" aria-pressed="false"></button><button class="swatch" data-color="#f2fbf4" style="background:#f2fbf4" aria-label="민트" aria-pressed="false"></button><button class="swatch" data-color="#fff8e9" style="background:#fff8e9" aria-label="크림" aria-pressed="false"></button><button class="swatch" data-color="#f3f0ff" style="background:#f3f0ff" aria-label="보라" aria-pressed="false"></button></div>
+      <label>배경 음악 파일 (선택)<input id="musicFile" type="file" accept="audio/*" /></label><div class="small">직접 권리를 보유했거나 사용 허가를 받은 음악을 선택해 줘. 음악은 브라우저 정책상 버튼을 눌러야 재생될 수 있어.</div>
+      <div class="actions"><button class="primary" id="applyBtn">미리 보기에 적용하기</button><button class="secondary" id="saveDraftBtn">내 브라우저에 저장</button><button class="secondary" id="resetBtn">처음으로</button></div>
+      <p class="small">공유 링크에는 편지 내용과 꾸미기 설정이 들어가. 민감한 개인정보는 적지 않는 것을 권장해. 링크를 아는 사람은 메시지를 볼 수 있어.</p>
+    </div>
+  </details>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<audio id="audio" loop></audio>
+<script>
+const $=id=>document.getElementById(id);
+
+const defaultData={title:'NAZ가 당신에게 전하고 싶은 편지에요..',to:'매일 소중한 사람',from:'당신의 행복을 바라는 사람',message:'오랜 시간을 함께 해주면서 우여곡절도 많았지만서도 늘 곁을 지켜줘서 고맙다고 말해주고 싶었어.',character:'🐱',subtitle:'NAZ는 당신을 응원하고 있어요 :)',bg:'#fff5f7'};
+let data={...defaultData},audioUrl=null,toastTimer;
+function toast(s){const t=$('toast');t.textContent=s;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2400)}
+function encode(obj){const bytes=new TextEncoder().encode(JSON.stringify(obj));let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+function decode(s){try{const b64=s.replace(/-/g,'+').replace(/_/g,'/');const bin=atob(b64);const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));return JSON.parse(new TextDecoder().decode(bytes))}catch{return null}}
+function apply(){data={title:$('titleInput').value.trim()||defaultData.title,to:$('toInput').value.trim()||'너에게',from:$('fromInput').value.trim()||'',message:$('messageInput').value||'',character:$('characterInput').value,subtitle:$('subtitleInput').value||'',bg:data.bg||defaultData.bg};render();toast('미리 보기에 적용했어 ♡')}
+function render(){document.title=data.title;$('heading').textContent=data.title;$('toLine').textContent='TO. '+data.to;$('fromLine').textContent=data.from;$('message').textContent=data.message;$('bunny').textContent=data.character;$('subtitle').textContent=data.subtitle;document.documentElement.style.setProperty('--bg',data.bg||defaultData.bg);document.querySelectorAll('.swatch').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.color===(data.bg||defaultData.bg))));}
+function fillInputs(){ $('titleInput').value=data.title;$('toInput').value=data.to;$('fromInput').value=data.from;$('messageInput').value=data.message;$('characterInput').value=data.character;$('subtitleInput').value=data.subtitle; }
+function getShareUrl(){const u=new URL(location.href);u.hash='c='+encode(data);return u.href}
+$('applyBtn').addEventListener('click',apply);
+$('swatches').addEventListener('click',e=>{const b=e.target.closest('[data-color]');if(!b)return;data.bg=b.dataset.color;render()});
+$('shareBtn').addEventListener('click',async()=>{apply();const url=getShareUrl();try{if(navigator.share){await navigator.share({title:data.title,text:'너에게 전하는 작은 편지 ♡',url});}else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url);toast('공유 링크를 복사했어 ♡');}else{prompt('아래 링크를 복사해 줘',url)}}catch(e){if(e.name!=='AbortError')toast('공유가 열리지 않았어. 링크를 다시 눌러 줘.')}});
+$('saveBtn').addEventListener('click',()=>{try{localStorage.setItem('aube-message-draft',JSON.stringify(data));toast('이 브라우저에 편지를 저장했어 ♡')}catch{toast('저장 공간을 사용할 수 없어.')}});
+$('saveDraftBtn').addEventListener('click',()=>{apply();try{localStorage.setItem('aube-message-draft',JSON.stringify(data));toast('초안을 저장했어 ♡')}catch{toast('저장 공간을 사용할 수 없어.')}});
+$('revealBtn').addEventListener('click',()=>{const card=$('messageCard');card.classList.remove('open-letter');void card.offsetWidth;card.classList.add('open-letter');for(let i=0;i<5;i++){const h=document.createElement('span');h.textContent=['♡','♥','✦'][i%3];h.style.cssText=`position:fixed;left:${20+Math.random()*60}%;top:${35+Math.random()*35}%;font-size:${16+Math.random()*20}px;color:var(--accent);pointer-events:none;z-index:9;transition:all 1.2s ease;`;document.body.appendChild(h);requestAnimationFrame(()=>{h.style.transform=`translateY(-${60+Math.random()*100}px) rotate(${Math.random()*60-30}deg)`;h.style.opacity='0'});setTimeout(()=>h.remove(),1300)}});
+$('musicFile').addEventListener('change',e=>{const f=e.target.files?.[0];if(!f)return;if(audioUrl)URL.revokeObjectURL(audioUrl);audioUrl=URL.createObjectURL(f);$('audio').src=audioUrl;$('musicBtn').textContent='♫ 음악 켜기';toast('음악을 준비했어. 재생 버튼을 눌러 줘.')});
+$('musicBtn').addEventListener('click',async()=>{const a=$('audio');if(!a.src){toast('먼저 꾸미기에서 음악 파일을 골라 줘.');$('editor').open=true;$('musicFile').focus();return}if(a.paused){try{await a.play();$('musicBtn').textContent='♫ 음악 끄기'}catch{toast('이 브라우저에서 음악을 재생할 수 없어.')}}else{a.pause();$('musicBtn').textContent='♫ 음악 켜기'}});
+$('resetBtn').addEventListener('click',()=>{data={...defaultData};fillInputs();render();toast('처음 상태로 돌아왔어.')});
+(function init(){const hash=location.hash.match(/(?:^#|&)c=([^&]+)/);const fromLink=hash?decode(hash[1]):null;if(fromLink&&typeof fromLink==='object'&&typeof fromLink.message==='string'){data={...defaultData,...fromLink};$('editor').classList.add('hidden');$('eyebrow').textContent='너만을 위해 도착한 편지';$('viewActions').classList.remove('hidden');}else{try{const saved=JSON.parse(localStorage.getItem('aube-message-draft'));if(saved)data={...defaultData,...saved}}catch{}fillInputs()}render()})();
+</script>
+</body>
+</html>
